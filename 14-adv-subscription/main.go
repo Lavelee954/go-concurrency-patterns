@@ -485,9 +485,6 @@ func (f *fakeFetcher) Fetch() (items []Item, next time.Time, err error) {
 	return
 }
 
-func init() {
-	rand.Seed(time.Now().UnixNano())
-}
 
 func main() {
 
@@ -508,5 +505,5 @@ func main() {
 		fmt.Println(it.Channel, it.Title)
 	}
 
-	panic("show me the stacks")
+	fmt.Println("Subscription demo finished")
 }

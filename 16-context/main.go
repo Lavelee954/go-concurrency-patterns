@@ -5,6 +5,7 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 	"time"
 )
 
@@ -18,6 +19,16 @@ func sleepAndTalk(ctx context.Context, d time.Duration, msg string) {
 }
 
 func main() {
+	if len(os.Args) > 1 && os.Args[1] == "server" {
+		server()
+		return
+	}
+	if len(os.Args) > 1 && os.Args[1] == "client" {
+		client()
+		return
+	}
+
+	// Default: run the sleepAndTalk example
 	log.Println("started")
 	ctx := context.Background()
 	ctx, cancel := context.WithCancel(ctx)

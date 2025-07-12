@@ -8,8 +8,7 @@ import (
 	"os"
 )
 
-func main() {
-
+func client() {
 	ctx := context.Background()
 	req, err := http.NewRequest("GET", "https://google.com", nil)
 	if err != nil {
